@@ -12,11 +12,12 @@ client = Client(account_sid, auth_token)
 phone_numbers = ['+12403059007', '+14044446018']
 
 for to_number in phone_numbers:
-    # Make a Twilio call for each phone number
-    call = client.calls.create(
-        twiml='<Response><Say>Ahoy, World!</Say></Response>',
-        to=to_number,
-        from_='+18339854826'  # Replace with your Twilio phone number
-    )
+    call = client.calls  \
+        .create(
+            machine_detection='Enable',
+            url='https://handler.twilio.com/twiml/EH8ccdbd7f0b8fe34357da8ce87ebe5a16',
+            to='+12403059007',
+            from_='+18339854826'
+        )
 
-    print(f"Call SID for {to_number}: {call.sid}")
+print(call.sid)
