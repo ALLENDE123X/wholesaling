@@ -20,7 +20,7 @@ voice_settings = {
 with open('output.mp3', 'wb') as output_file:
     with open('audioData.csv', 'r') as csv_file:
         csv_reader = csv.DictReader(csv_file)
-        for row in csv_reader:
+        for ind, row in enumerate(csv_reader):
             name = row["Name"]
             address = row["Address"]
             
@@ -36,9 +36,10 @@ with open('output.mp3', 'wb') as output_file:
             response = requests.post(api_url, json=data, headers=headers)
 
             if response.status_code == 200:
-                for chunk in response.iter_content(chunk_size=CHUNK_SIZE):
-                    if chunk:
-                        output_file.write(chunk)
-                output_file.write(b'\n')
+                output_file_name = f'output_{ind}.mp3'
+                with open(output_file_name, 'wb') as output_file:
+                    for chunk in response.iter_content(chunk_size=CHUNK_SIZE):
+                        if chunk:
+                            output_file.write(chunk)
             else:
                 print(f"Failed with status code: {response.status_code}")
