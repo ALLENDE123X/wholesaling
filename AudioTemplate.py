@@ -71,3 +71,24 @@ with open('output.mp3', 'wb') as output_file:
                                 output_file.write(chunk)
                 else:
                     print(f"Failed with status code: {response.status_code}")
+    
+# Try it Yourself mp3
+def tryAudio(fname):
+    with open('output.mp3', 'wb') as output_file:
+        text = f"Hello there {fname}, we saw that you are interested in our product. Give us a call when you can, thank you!"       
+        data = {
+            "text": text,
+            "model_id": model_id,
+            "voice_settings": voice_settings
+        }
+
+        response = requests.post(api_url, json=data, headers=headers)
+
+        if response.status_code == 200:
+            output_file_name = f'output_try_{fname}.mp3'
+            with open(output_file_name, 'wb') as output_file:
+                for chunk in response.iter_content(chunk_size=CHUNK_SIZE):
+                    if chunk:
+                        output_file.write(chunk)
+        else:
+            print(f"Failed with status code: {response.status_code}")

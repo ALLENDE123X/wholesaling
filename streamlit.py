@@ -1,7 +1,8 @@
 import streamlit as st
 import time
 import pandas as pd
-from app.generateLead import generatePropertyLeads, generateBuyerLeads
+from app.generateLead import generatePropertyLeads, generateBuyerLeads, generateTryLeads
+from AudioTemplate import tryAudio
 from pandas.api.types import (
     is_categorical_dtype,
     is_datetime64_any_dtype,
@@ -27,7 +28,7 @@ def main():
     st.title("Wholesale Lead Generator")
 
     # Create tabs
-    tabs = ["Properties", "Buyers"]
+    tabs = ["Properties", "Buyers", "Try Yourself!"]
     selected_tab = st.sidebar.radio("Select Tab", tabs)
 
     # Properties Tab
@@ -65,6 +66,20 @@ def main():
         if button_buyers:
             generateBuyerLeads()
             simulate_backend_processing(progress_bar_buyers, display_text_buyers)
+    
+    # Try Yourself!
+    elif selected_tab == "Try Yourself!":
+        st.header("Try out our Product!")
+        phone_number = st.text_input("Enter Phone Number", "")
+        first_name = st.text_input("Enter First Name", "")
+        button_try = st.button("Start Calling")
+        if button_try:
+            with st.spinner("Processing..."):
+                tryAudio(first_name)
+                generateTryLeads(phone_number, first_name)
+
+
+        
 
 def filter_dataframe(df: pd.DataFrame) -> pd.DataFrame:
     df = df.copy()

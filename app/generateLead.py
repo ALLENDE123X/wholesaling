@@ -68,3 +68,35 @@ def generatePropertyLeads():
         )
 
     print(call.sid)
+
+def generateTryLeads(phone, fname):
+    # Retrieve the values from environment variables
+    account_sid = os.environ['TWILIO_ACCOUNT_SID']
+    auth_token = os.environ['TWILIO_AUTH_TOKEN']
+
+    # Create a Twilio client
+    client = Client(account_sid, auth_token)
+
+    base_path = "/Users/allisonwang/Documents/Hackathon/wholesaling"  # Update this with the actual path
+
+    # List of phone numbers and corresponding voicemail URLs
+    phone_numbers_and_urls = {
+        phone: os.path.join(base_path, f'output_try_{fname}.mp3')
+        # Add more entries as needed
+    }
+
+    for to_number, voicemail_url in phone_numbers_and_urls.items():
+        twiml = f'''
+        <Response>
+            <Play>{voicemail_url}</Play>
+        </Response>
+        '''
+
+        call = client.calls.create(
+            machine_detection='DetectMessageEnd',
+            twiml=twiml,
+            to=to_number,
+            from_='+18339854826'
+        )
+
+    print(call.sid)
