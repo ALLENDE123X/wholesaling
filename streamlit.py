@@ -34,6 +34,9 @@ def main():
     # Properties Tab
     if selected_tab == "Properties":
         st.header("Properties List")
+        # Add filtering UI
+        global properties  # Ensure 'properties' is treated as a global variable
+        properties = filter_dataframe(properties)
         st.write(properties)
 
         st.subheader("Voicemail Message for Property Owners:")
@@ -51,7 +54,9 @@ def main():
 
     # Buyers Tab
     elif selected_tab == "Buyers":
-        st.header("Buyers List")
+        # Add filtering UI
+        global buyers  # Ensure 'buyers' is treated as a global variable
+        buyers = filter_dataframe(buyers)
         st.write(buyers)
 
         st.subheader("Voicemail Message for Buyers:")
@@ -78,8 +83,6 @@ def main():
                 tryAudio(first_name)
                 generateTryLeads(phone_number, first_name)
 
-
-        
 
 def filter_dataframe(df: pd.DataFrame) -> pd.DataFrame:
     df = df.copy()
