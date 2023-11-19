@@ -33,15 +33,10 @@ def main():
     # Properties Tab
     if selected_tab == "Properties":
         st.header("Properties List")
-<<<<<<< HEAD
-        st.subheader("Voicemail Template:")
-        premade_text = "Hey there <owner name>, we found a buyer for a property at <street address>.\nGive us a call when you can, thank you!"
-=======
         st.write(properties)
 
         st.subheader("Voicemail Message for Property Owners:")
         premade_text = "Hey there <name>, we saw that you matched for a listing at <address>.\nGive us a call when you can, thank you!"
->>>>>>> 65df91ccdb3aad602f51e688cf414414de8bd037
         st.text(premade_text)
         progress_bar_properties = st.progress(0)
         display_text_properties = st.empty()
@@ -56,15 +51,10 @@ def main():
     # Buyers Tab
     elif selected_tab == "Buyers":
         st.header("Buyers List")
-<<<<<<< HEAD
-        st.subheader("Voicemail Template:")
-        premade_text = "Hey there <real estate company name>, we saw that you matched for a listing at <street address>.\nGive us a call when you can, thank you!"
-=======
         st.write(buyers)
 
         st.subheader("Voicemail Message for Buyers:")
         premade_text = "Hey there <name>, we saw that you matched for a listing at <address>.\nGive us a call when you can, thank you!"
->>>>>>> 65df91ccdb3aad602f51e688cf414414de8bd037
         st.text(premade_text)
         progress_bar_buyers = st.progress(0)
         display_text_buyers = st.empty()
