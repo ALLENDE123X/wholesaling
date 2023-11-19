@@ -18,6 +18,9 @@ def main():
     # Properties Tab
     if selected_tab == "Properties":
         st.header("Properties Tab")
+        st.subheader('Voicemail Template:')
+        premade_template = "Hey there <buyer name>, we saw that you matched for a listing at <listing address>.\nGive us a call when you can, thank you!"
+        st.text(premade_template)
         progress_bar_properties = st.progress(0)
         display_text_properties = st.empty()
         button_properties = st.button("Start Processing")
