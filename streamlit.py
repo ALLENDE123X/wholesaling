@@ -40,6 +40,7 @@ def main():
         st.text(premade_text)
         progress_bar_properties = st.progress(0)
         display_text_properties = st.empty()
+        st.slider('Batch Size', min_value=1, max_value=100)
         button_properties = st.button("Start Calling")
 
         # Simulate backend processing on button click
@@ -61,6 +62,7 @@ def main():
         st.text(premade_text)
         progress_bar_buyers = st.progress(0)
         display_text_buyers = st.empty()
+        st.slider('Batch Size', min_value=1, max_value=100)
         button_buyers = st.button("Start Calling")
 
         # Simulate different backend processing on button click
