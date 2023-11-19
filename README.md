@@ -1,7 +1,7 @@
-# Streamlined Wholesaler Platform
+# Wholesale Lead Generator
 
 ## Overview
-The Streamlined Wholesaler Platform is a cutting-edge solution designed to help wholesalers optimize their lead generation process by seamlessly connecting them with prospective properties and buyers. This platform leverages live online data and employs automation to streamline the calling process, making it efficient and hassle-free.
+The Wholesale Lead Generator is a cutting-edge solution designed to help wholesalers optimize their lead generation process by seamlessly connecting them with prospective properties and buyers. This platform leverages live online data and employs automation to streamline the calling process, making it efficient and hassle-free.
 
 ## Features
 1. Lead Generation Automation
@@ -17,7 +17,7 @@ The platform provides real-time progress tracking through dynamic progress bars 
 The Twilio integration enables efficient batch calling with machine detection capabilities. Wholesalers can initiate calling campaigns with pre-defined voicemail messages, maximizing the reach to potential leads.
 
 ## Installation and Usage
-To use the Streamlined Wholesaler Platform, follow these steps:
+To use the Wholesale Lead Generator , follow these steps:
 
 ## Clone the Repository:
 
@@ -39,4 +39,4 @@ Credits
 Audio Data: Eleven Labs
 Batch Calling System: Twilio
 Support and Feedback
-For any issues or feedback, please contact our support team. We appreciate your valuable input to enhance and improve the Streamlined Wholesaler Platform. Thank you for choosing our platform to streamline your wholesaling process!
+For any issues or feedback, please contact our support team. We appreciate your valuable input to enhance and improve the Wholesale Lead Geneartor. Thank you for choosing our platform to streamline your wholesaling process!

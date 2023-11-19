@@ -11,7 +11,7 @@ def simulate_backend_processing(progress_bar, display_text):
     display_text.text("Processing complete!")
 
 def main():
-    st.title("Streamlit App with Tabs")
+    st.title("Wholesale Lead Generator")
 
     # Create tabs
     tabs = ["Properties", "Buyers"]
@@ -19,7 +19,7 @@ def main():
 
     # Properties Tab
     if selected_tab == "Properties":
-        st.header("Properties Tab")
+        st.header("Properties List")
         progress_bar_properties = st.progress(0)
         display_text_properties = st.empty()
         button_properties = st.button("Start Processing")
@@ -30,7 +30,7 @@ def main():
 
     # Buyers Tab
     elif selected_tab == "Buyers":
-        st.header("Buyers Tab")
+        st.header("Buyers List")
         progress_bar_buyers = st.progress(0)
         display_text_buyers = st.empty()
         button_buyers = st.button("Start Processing")
