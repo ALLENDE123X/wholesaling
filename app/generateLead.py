@@ -12,12 +12,12 @@ def generateleads():
 
     # List of phone numbers and corresponding voicemail URLs
     phone_numbers_and_urls = {
-        '+12403059007': 'https://console.cloud.google.com/storage/browser/_details/wholesaler/output_0.mp3;tab=live_object?project=quantum-keep-405604',
-        '+14044446018': 'https://console.cloud.google.com/storage/browser/_details/wholesaler/output_1.mp3;tab=live_object?project=quantum-keep-405604',
-        '+16783278767': 'https://console.cloud.google.com/storage/browser/_details/wholesaler/output_2.mp3;tab=live_object?project=quantum-keep-405604',
-        '+14046049705': 'https://console.cloud.google.com/storage/browser/_details/wholesaler/output_3.mp3;tab=live_object?project=quantum-keep-405604',
-        '+12403059007': 'https://console.cloud.google.com/storage/browser/_details/wholesaler/output_4.mp3;tab=live_object?project=quantum-keep-405604',
-        '+14044446018': 'https://console.cloud.google.com/storage/browser/_details/wholesaler/output_5.mp3;tab=live_object?project=quantum-keep-405604'
+        '+12403059007': 'https://storage.googleapis.com/wholesaler/output_0.mp3',
+        '+14044446018': 'https://storage.googleapis.com/wholesaler/output_1.mp3',
+        '+16783278767': 'https://storage.googleapis.com/wholesaler/output_2.mp3',
+        '+14046049705': 'https://storage.googleapis.com/wholesaler/output_3.mp3',
+        '+12403059007': 'https://storage.googleapis.com/wholesaler/output_4.mp3',
+        '+14044446018': 'https://storage.googleapis.com/wholesaler/output_5.mp3'
         # Add more entries as needed
     }
 
