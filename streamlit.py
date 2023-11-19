@@ -1,7 +1,9 @@
 import streamlit as st
 import time
+from app.generateLead import generateleads
 
 def simulate_backend_processing(progress_bar, display_text):
+    generateleads()
     progress_bar.progress(0)
     for i in range(1, 101):
         time.sleep(0.1)  # Simulating some backend processing time
