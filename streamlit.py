@@ -13,7 +13,7 @@ def main():
 
     # Create tabs
     tabs = ["Properties", "Buyers"]
-    selected_tab = st.sidebar.selectbox("Select Tab", tabs)
+    selected_tab = st.sidebar.radio("Select Tab", tabs)
 
     # Properties Tab
     if selected_tab == "Properties":
