@@ -18,7 +18,7 @@ voice_settings = {
 }
 
 with open('output.mp3', 'wb') as output_file:
-    with open('audioData.csv', 'r') as csv_file:
+    with open('.csv', 'r') as csv_file:
         csv_reader = csv.DictReader(csv_file)
         for ind, row in enumerate(csv_reader):
             name = row["Name"]

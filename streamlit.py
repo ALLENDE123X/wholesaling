@@ -21,7 +21,7 @@ def main():
     if selected_tab == "Properties":
         st.header("Properties List")
         st.subheader("Voicemail Template:")
-        premade_text = "Hey there <name>, we saw that you matched for a listing at <address>.\nGive us a call when you can, thank you!"
+        premade_text = "Hey there <company name>, we found a buyer for your property.\nGive us a call when you can, thank you!"
         st.text(premade_text)
         progress_bar_properties = st.progress(0)
         display_text_properties = st.empty()
