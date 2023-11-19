@@ -8,16 +8,19 @@ auth_token = os.environ['TWILIO_AUTH_TOKEN']
 # Create a Twilio client
 client = Client(account_sid, auth_token)
 
-# List of phone numbers to call
-phone_numbers = ['+12403059007', '+14044446018']
+# List of phone numbers and corresponding voicemail URLs
+phone_numbers_and_urls = {
+    '+12403059007': 'http://your-server.com/voicemail1.mp3',
+    '+14044446018': 'http://your-server.com/voicemail2.mp3',
+    # Add more entries as needed
+}
 
-for to_number in phone_numbers:
-    call = client.calls  \
-        .create(
-            machine_detection='Enable',
-            url='https://handler.twilio.com/twiml/EH8ccdbd7f0b8fe34357da8ce87ebe5a16',
-            to='+12403059007',
-            from_='+18339854826'
-        )
+for to_number, voicemail_url in phone_numbers_and_urls.items():
+    call = client.calls.create(
+        machine_detection='Enable',
+        url=f'http://your-server.com/your-voicemail-twiml?voicemail_url={voicemail_url}',
+        to=to_number,
+        from_='+18339854826'
+    )
 
 print(call.sid)
